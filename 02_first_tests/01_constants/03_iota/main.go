@@ -4,7 +4,7 @@ import "fmt"
 
 const (
 	_  = iota // throw away 0
-	KB = 1 << (iota * 10) // byteshift to the left: 1 << (1 * 10)
+	KB = 1 << (iota * 10) // bitshift to the left: 1 << (1 * 10)
 	MB = 1 << (iota * 10) // 1 << (2*10)
 	GB = 1 << (iota * 10) // 1 << (3 * 10)
 )
