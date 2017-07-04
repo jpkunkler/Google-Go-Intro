@@ -14,13 +14,13 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	defer res.Body.Close() //after we are done, close our response
 
 	words := make(map[string]string)
 
 	// scan our result into buffer
 	sc := bufio.NewScanner(res.Body)
 	sc.Split(bufio.ScanWords) // split buffer by words
+	defer res.Body.Close() //after we are done, close our response
 
 	for sc.Scan() { // for every word we scanned
 		words[sc.Text()] = "" //add entry to our map
