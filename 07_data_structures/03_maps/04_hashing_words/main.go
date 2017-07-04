@@ -14,6 +14,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
+	defer res.Body.Close() //after we are done, close our response
 
 	words := make(map[string]string)
 
