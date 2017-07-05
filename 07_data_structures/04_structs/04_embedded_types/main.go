@@ -8,8 +8,9 @@ type Person struct {
 	age int
 }
 
+// DoubleZero is the outer type
 type DoubleZero struct {
-	Person
+	Person // Person is the inner type
 	LicenseToKill bool
 }
 
