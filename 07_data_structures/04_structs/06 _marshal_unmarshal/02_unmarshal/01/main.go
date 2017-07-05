@@ -22,6 +22,7 @@ func main() {
 	bs := []byte(`{"First": "James", "Last":"Bond", "Age":20}`)
 	json.Unmarshal(bs, &p1) // unmarshal those values to memory address of struct p1
 
+	fmt.Println("---------------- AFTER UNMARSHAL:")
 	// now p1 has the extracted values!
 	fmt.Println(p1.First)
 	fmt.Println(p1.Last)
