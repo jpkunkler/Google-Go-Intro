@@ -7,14 +7,14 @@ type Square struct {
 	side float64
 }
 
-// attach method to our type Square
-func (z Square) area() float64 {
-	return z.side * z.side
-}
-
 // any type that uses the area() float64 method will be a shape
 type Shape interface {
 	area() float64
+}
+
+// attach method to our type Square
+func (z Square) area() float64 {
+	return z.side * z.side
 }
 
 func info(z Shape) {
