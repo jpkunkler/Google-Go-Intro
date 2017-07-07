@@ -41,9 +41,14 @@ func main() {
 
 /*
 
-RECEIVER	VALUE
------------------------
+RECEIVERS	VALUES
+-------------------------
 (t T)		T and *T
 (t *T)		*T
+
+VALUES		RECEIVERS
+--------------------------
+T		(t T)
+*T		(t T) AND (t *T)  // A POINTER VALUE WORKS WITH BOTH!!
 
 */
