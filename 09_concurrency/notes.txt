@@ -1,0 +1,4 @@
+Presentation by Rob Pike on Concurrency vs. Parallelism:
+'Concurrency is not Parallelism' by Rob Pike
+https://vimeo.com/49718712
+
