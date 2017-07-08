@@ -14,35 +14,34 @@ package main
 import (
 	"fmt"
 	"sync"
+	"time"
+	"math/rand"
 )
 
 // assign and instantiate a WaitGroup
 var wg sync.WaitGroup
 
 // both functions will try to assign values to test concurrently --> race condition
-var test int
+var counter int
 
 func main() {
-	wg.Add(2) // add 2 to WaitGroups since we run 2 functions
+	wg.Add(2)
 
-	// start goroutines
-	go foo()
-	go bar()
-	wg.Wait() // wait until all functions are done
+	go incrementor("Foo: ")
+	go incrementor("Bar: ")
+
+	wg.Wait()
+	fmt.Println("Counter: ", counter)
 }
 
-func foo() {
-	for i := 0; i < 45; i++ {
-		test = i
-		fmt.Println("Foo:", test)
-	}
-	wg.Done()
-}
+func incrementor(s string) {
+	for i := 0; i < 20; i++ {
+		x := counter
+		x++
+		time.Sleep(time.Duration(rand.Intn(20))*time.Millisecond) // used to artificially give time for other process
+		counter = x
+		fmt.Println(s, i, "Counter: ", counter)
 
-func bar() {
-	for i := 0; i < 45; i++ {
-		test = i
-		fmt.Println("Bar:", test)
 	}
 	wg.Done()
 }
