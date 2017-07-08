@@ -1,3 +1,8 @@
+/*
+CONCURRENCY
+doing many things, but only one at a time
+--> "multitasking"
+*/
 package main
 
 import (
