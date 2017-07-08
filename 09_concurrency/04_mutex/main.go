@@ -1,11 +1,11 @@
 /*
 MUTEX stands for mutual exclusion object
- */
+*/
 package main
 
 import (
-	"sync"
 	"fmt"
+	"sync"
 )
 
 var wg sync.WaitGroup
