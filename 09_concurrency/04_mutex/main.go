@@ -15,8 +15,8 @@ var mutex sync.Mutex
 func main() {
 	wg.Add(2)
 
-	incrementor("Foo: ")
-	incrementor("Bar: ")
+	go incrementor("Foo: ")
+	go incrementor("Bar: ")
 
 	wg.Wait()
 	fmt.Println("Counter: ", counter)
