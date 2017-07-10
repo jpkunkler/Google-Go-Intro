@@ -15,7 +15,7 @@ import (
 )
 
 func main() {
-	c := make(chan int) // create a channel for integers
+	c := make(chan int) // create an unbuffered channel for integers
 
 	go func() {
 		for i := 0; i < 10; i++ {
