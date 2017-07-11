@@ -7,7 +7,7 @@ import (
 func main() {
 	const n = 10 // define how many goroutines/functions we want
 	c := make(chan int)
-	done := make(chan bool)
+	done := make(chan bool) // semaphore channel
 
 	go func ()  { // same as before, populate the channel
 		for i := 0; i < 1000; i++ {
