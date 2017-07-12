@@ -42,18 +42,23 @@ func sq(input chan int) chan int {
 	return out
 }
 
-func merge(cs ...chan int) chan int {
+func merge(cs ...chan int) chan int { // this takes in a []chan int --> multiple channels!
 	out := make(chan int)
 	var wg sync.WaitGroup
 	wg.Add(len(cs))
 
+	// use a func expression for readability
+	// fetch output from channel and send it to single output channel
+	output := func(ch chan int) {
+		for n := range ch {
+			out <- n
+		}
+		wg.Done()
+	}
+
+	// loop over every channel in our []chan int
 	for _, c := range cs {
-		go func(ch chan int) {
-			for n := range ch {
-				out <- n
-			}
-			wg.Done()
-		}(c)
+		go output(c)
 	}
 
 	// Wait until every goroutine is done, then close the channel to prevent deadlock
