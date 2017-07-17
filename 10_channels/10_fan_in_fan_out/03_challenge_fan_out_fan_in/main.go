@@ -2,11 +2,12 @@ package main
 
 import (
 	"fmt"
+	"sync/atomic"
 	"time"
 )
 
-var workerID int
-var publisherID int
+var workerID int64
+var publisherID int64
 
 func main() {
 	input := make(chan string)
@@ -21,8 +22,8 @@ func main() {
 }
 
 func publisher(out chan string) {
-	publisherID++
-	thisID := publisherID
+	atomic.AddInt64(&publisherID, 1)
+	thisID := atomic.LoadInt64(&publisherID)
 	dataID := 0
 	for {
 		dataID++
@@ -33,8 +34,8 @@ func publisher(out chan string) {
 }
 
 func workerProcess(in <-chan string) {
-	workerID++
-	thisID := workerID
+	atomic.AddInt64(&workerID, 1)
+	thisID := atomic.LoadInt64(&workerID)
 	for {
 		fmt.Printf("%d: waiting for input...\n", thisID)
 		input := <-in
