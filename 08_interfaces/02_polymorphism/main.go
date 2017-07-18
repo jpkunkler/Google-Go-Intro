@@ -5,16 +5,17 @@ import (
 	"math"
 )
 
-// define our type Square which takes the length of a side
+// Square defines our type Square which takes the length of a side
 type Square struct {
 	side float64
 }
 
+// Circle defines our tyoe Circle which takes a radius
 type Circle struct {
 	radius float64
 }
 
-// any type that implements the area() float64 method will will be a type Shape
+// Shape implies that any type that implements the area() float64 method will will be a type Shape
 type Shape interface {
 	area() float64
 }

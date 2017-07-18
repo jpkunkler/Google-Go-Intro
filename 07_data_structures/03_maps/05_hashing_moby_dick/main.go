@@ -32,7 +32,7 @@ func main() {
 	// Loop over all words
 	for scanner.Scan() {
 		word := scanner.Text()
-		n := HashBucket(word, 12) // hash every word using our algorithm
+		n := hashBucket(word, 12)             // hash every word using our algorithm
 		buckets[n] = append(buckets[n], word) // add our word to the appropriate bucket
 	}
 
@@ -44,7 +44,7 @@ func main() {
 	//fmt.Println(buckets[6])
 }
 
-func HashBucket(word string, buckets int) int {
+func hashBucket(word string, buckets int) int {
 	var sum int
 	// take the sum of letters for each word
 	for _, v := range word {

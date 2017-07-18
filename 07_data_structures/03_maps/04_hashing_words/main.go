@@ -20,7 +20,7 @@ func main() {
 	// scan our result into buffer
 	sc := bufio.NewScanner(res.Body)
 	sc.Split(bufio.ScanWords) // split buffer by words
-	defer res.Body.Close() //after we are done, close our response
+	defer res.Body.Close()    //after we are done, close our response
 
 	for sc.Scan() { // for every word we scanned
 		words[sc.Text()] = "" //add entry to our map
@@ -30,7 +30,7 @@ func main() {
 	}
 
 	i := 0
-	for k, _ := range words { //we only need the key since our values are all empty ""
+	for k := range words { //we only need the key since our values are all empty ""
 		fmt.Println(k)
 		if i == 200 {
 			break

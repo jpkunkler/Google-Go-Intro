@@ -9,7 +9,7 @@ func main() {
 	fmt.Println(a)
 	fmt.Println(&a)
 
-	var b *int = &a // b is of type "int pointer" -- the * is part of the type!!
+	var b int = &a // b is of type "int pointer" *int -- the * is part of the type!!
 
 	fmt.Println(b)
 	fmt.Println(*b) // *b means de-referencing memory address

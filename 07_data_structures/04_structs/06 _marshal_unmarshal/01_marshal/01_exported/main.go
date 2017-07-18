@@ -5,10 +5,11 @@ import (
 	"fmt"
 )
 
+// Person is an entry for a single person
 type Person struct {
-	First string
-	Last string
-	Age int
+	First       string
+	Last        string
+	Age         int
 	notExported int
 }
 

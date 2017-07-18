@@ -2,12 +2,12 @@ package main
 
 import "fmt"
 
-// define our type Square which takes the length of a side
+// Square defines our type Square which takes the length of a side
 type Square struct {
 	side float64
 }
 
-// any type that uses the area() float64 method will be a shape
+// Shape describes that any type that uses the area() float64 method will be a shape
 type Shape interface {
 	area() float64
 }

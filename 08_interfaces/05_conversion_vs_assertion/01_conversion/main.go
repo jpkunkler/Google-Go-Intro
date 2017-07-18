@@ -10,8 +10,8 @@ package main
 import "fmt"
 
 func main() {
-	var x int = 6
-	var y float64 = 32.156
+	var x = 6
+	var y = 32.156
 	fmt.Printf("x: %T - %d \n", x, x)
 	fmt.Printf("y: %T - %f \n", y, y)
 	fmt.Println("Converting...")

@@ -1,14 +1,15 @@
 package main
 
 import (
-	"fmt"
 	"encoding/json"
+	"fmt"
 )
 
+// Person is an entry for a single person
 type Person struct {
 	First string
-	Last string
-	Age int
+	Last  string
+	Age   int
 }
 
 func main() {
@@ -17,7 +18,6 @@ func main() {
 	fmt.Println(p1.First)
 	fmt.Println(p1.Last)
 	fmt.Println(p1.Age)
-
 
 	bs := []byte(`{"First": "James", "Last":"Bond", "Age":20}`)
 	json.Unmarshal(bs, &p1) // unmarshal those values to memory address of struct p1

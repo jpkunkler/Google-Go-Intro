@@ -2,15 +2,16 @@ package main
 
 import "fmt"
 
+// Person is an entry for a single person
 type Person struct {
 	first string
-	last string
-	age int
+	last  string
+	age   int
 }
 
 // DoubleZero is the outer type
 type DoubleZero struct {
-	Person // Person is the inner type
+	Person        // Person is the inner type
 	LicenseToKill bool
 }
 

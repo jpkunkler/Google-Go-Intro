@@ -5,11 +5,12 @@ import (
 	"fmt"
 )
 
+// Person is a single entry for a person
 type Person struct {
 	// those fields are not exported (lowercase)
 	first string
-	last string
-	age int
+	last  string
+	age   int
 }
 
 func main() {

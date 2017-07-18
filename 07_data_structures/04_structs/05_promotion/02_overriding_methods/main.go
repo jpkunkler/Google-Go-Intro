@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// Person is an entry for a single person
 type Person struct {
 	first string
 	last  string
@@ -10,15 +11,16 @@ type Person struct {
 
 // DoubleZero is the outer type
 type DoubleZero struct {
-	Person // Person is the inner type
+	Person        // Person is the inner type
 	LicenseToKill bool
 }
 
+// Greeting prints out the greeting of a regular person
 func (p Person) Greeting() {
 	fmt.Println("I'm just a regular person.")
 }
 
-// if the receiver is a double zero, this will override the regular person method
+// Greeting prints out the special 00 greeting
 func (dz DoubleZero) Greeting() {
 	fmt.Println("Miss MoneyPenny, it's so good to see you.")
 }

@@ -5,11 +5,12 @@ import (
 	"fmt"
 )
 
+// Person is an entry for a single person
 type Person struct {
 	// those fields are not exported (lowercase)
 	First string
-	Last string `json:"-"` // this tag will exclude this value for our json export
-	Age int `json:"wisdom-score"` // this value will be renamed in our json export
+	Last  string `json:"-"`            // this tag will exclude this value for our json export
+	Age   int    `json:"wisdom-score"` // this value will be renamed in our json export
 }
 
 func main() {
